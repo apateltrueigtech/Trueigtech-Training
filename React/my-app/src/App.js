@@ -6,10 +6,11 @@ function App() {
   const [count, setCount] = useState(0)
   return (
     <div className="App">
-     <h1>Counter App</h1>
+     <h1 className='text-blue-500'>Counter App</h1>
      <button onClick={()=>setCount(count-1)}>DECREMENT</button>
      <h2>{count}</h2>
      <button onClick={()=>setCount(count+1)}>INCREMENT</button>
+
          
     </div>
   );

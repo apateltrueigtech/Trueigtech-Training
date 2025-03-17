@@ -1,5 +1,6 @@
 
-import greet, { add, subtract, multiply, divide, square, squareRoot, power } from './mathutils.js';
+import greet from "./mathutils.js"; 
+import { add, subtract, multiply, divide, square, squareRoot, power } from './mathutils.js';
 
 console.log(greet()); 
 

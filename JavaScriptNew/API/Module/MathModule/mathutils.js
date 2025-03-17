@@ -1,11 +1,10 @@
 
-
 export default function greet() {
-    return "Welcome to the Math Utility Module!";
+    return "Welcome ";
 }
 
 export function add(a, b) {
-    return a + b;
+         return a + b;
 }
 
 export function subtract(a, b) {

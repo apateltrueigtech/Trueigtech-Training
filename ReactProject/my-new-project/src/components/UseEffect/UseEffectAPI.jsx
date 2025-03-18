@@ -3,14 +3,16 @@ import { useEffect } from 'react'
 function useEffectAPI  ()  {
     const[data,setData ] = useState([])
     const[loading,setLoading]= useState(true)
+
+    const fetchData = async()=>{
+        const response = await fetch ('https://jsonplaceholder.typicode.com/todos')
+        const result = await response.json()
+        // console.log(result)
+        setData(result)
+        setLoading(false)
+    }
     useEffect(()=>{
-        const fetchData = async()=>{
-            const response = await fetch ('https://jsonplaceholder.typicode.com/todos')
-            const result = await response.json()
-            // console.log(result)
-            setData(result)
-            setLoading(false)
-        }
+      
         fetchData()
     },[])
     if(loading) return<h3>Loading...</h3>

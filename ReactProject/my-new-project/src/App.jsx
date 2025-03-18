@@ -6,6 +6,8 @@ import Lifecycle2 from './components/Lifecycle2';
 import Student from './components/Student';
 import Counter from './components/counter';
 import UseEffectAPI from './components/UseEffect/UseEffectAPI';
+import LoggerComponent from './components/UseEffect/LoggerComponent';
+import TimerComponent from './components/UseEffect/TimerComponent';
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
       <Lifecycle/>
       <Lifecycle2/>
        <UseEffectAPI/> 
+       <LoggerComponent/>
+       <TimerComponent/>
     </div>
        
     )

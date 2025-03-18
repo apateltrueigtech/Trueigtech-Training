@@ -10,7 +10,7 @@ function Lifecycle() {
         return()=>{
             console.log("Component unmounted");
         }
-    }, []);
+    }, []); 
      useEffect(()=>{
        if(count>0 && flag==true){
         console.log("Component updated");
@@ -19,9 +19,10 @@ function Lifecycle() {
         }, 1000); 
         return ()=> clearTimeout(timer) ; 
      }
-    },[count,flag]
+    },[count,flag] // this will run when count or flag is changed
 )
-    return (<>
+    return (
+    <>
     <h1 className="p-4 text-2xl">Stop_Watch :{count}</h1>
     <button onClick={()=> 
      {

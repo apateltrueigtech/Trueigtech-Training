@@ -14,7 +14,7 @@ function useEffectAPI  ()  {
     useEffect(()=>{
       
         fetchData()
-    },[])
+    },[])       //It will run only on 1st render
     if(loading) return<h3>Loading...</h3>
   return (
     <div>

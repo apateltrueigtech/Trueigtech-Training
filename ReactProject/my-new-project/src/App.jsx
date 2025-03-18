@@ -8,6 +8,7 @@ import Counter from './components/counter';
 import UseEffectAPI from './components/UseEffect/UseEffectAPI';
 import LoggerComponent from './components/UseEffect/LoggerComponent';
 import TimerComponent from './components/UseEffect/TimerComponent';
+import ReactHookForm from './components/ReactHookForm';
 
 function App() {
 
@@ -16,12 +17,13 @@ function App() {
     return(
     <div>
       <Header/>
-      <Counter/>
+      {/* <Counter/>
       <Lifecycle/>
       <Lifecycle2/>
        <UseEffectAPI/> 
        <LoggerComponent/>
-       <TimerComponent/>
+       <TimerComponent/> */}
+       <ReactHookForm/>
     </div>
        
     )

@@ -1,6 +1,7 @@
 
 import './App.css'
 import Header from './components/Header';
+import Lifecycle from './components/Lifecycle';
 import Student from './components/Student';
 import Counter from './components/counter';
 
@@ -12,6 +13,7 @@ function App() {
     <div>
         <Header/>
       <Counter/>
+      <Lifecycle/>
     </div>
        
     )

@@ -5,6 +5,7 @@ import Lifecycle from './components/Lifecycle';
 import Lifecycle2 from './components/Lifecycle2';
 import Student from './components/Student';
 import Counter from './components/counter';
+import UseEffectAPI from './components/UseEffect/UseEffectAPI';
 
 function App() {
 
@@ -12,10 +13,11 @@ function App() {
   
     return(
     <div>
-        <Header/>
+      <Header/>
       <Counter/>
       <Lifecycle/>
       <Lifecycle2/>
+       <UseEffectAPI/> 
     </div>
        
     )

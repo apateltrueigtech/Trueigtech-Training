@@ -5,7 +5,7 @@ function LoggerComponent  () {
     
     useEffect(()=>{
         console.log('Component rendered or count changed:',count);
-    });                                 //Runs on every render
+    },[count]);                                 //Runs on every render
   
     return (
     <div>

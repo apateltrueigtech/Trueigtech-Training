@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import { Link, Outlet } from 'react-router-dom'
 function useEffectAPI  ()  {
     const[data,setData ] = useState([])
     const[loading,setLoading]= useState(true)
@@ -22,7 +23,12 @@ function useEffectAPI  ()  {
         {
             data.map((data)=> <li key={data.id}>{data.title}</li>)
         }
+         <li><Link to="/TimerComponent">TimerComponent</Link></li>
+         <li><Link to="/LoggerComponent">LoggerComponent</Link></li>
+        <Outlet/>
     </div>
+
+    
   )
 }
 

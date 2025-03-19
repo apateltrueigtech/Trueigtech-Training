@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import { useState } from 'react';
 
+
 function Lifecycle() {
    
     const[count,setCount]=useState(0);
@@ -14,7 +15,7 @@ function Lifecycle() {
      useEffect(()=>{
        if(count>0 && flag==true){
         console.log("Component updated");
-        const timer = setTimeout(() => {
+        const timer = setInterval(() => {
             setCount((prevCount)=>prevCount+1);   
         }, 1000); 
         return ()=> clearTimeout(timer) ; 
@@ -30,8 +31,11 @@ function Lifecycle() {
         setCount(1)
     }} className='p-4 border' >start & Reset </button>
     <button  className='m-4 p-4 border' onClick={()=>setFlag(false)}>Stop</button>
+
+   
     </>
   )
 }
+
 
 export default Lifecycle

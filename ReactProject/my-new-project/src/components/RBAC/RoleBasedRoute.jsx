@@ -7,7 +7,9 @@ const RoleBasedRoute = ({ allowedRoles }) => {
   return user && allowedRoles.includes(user.role) ? (
     <Outlet />
   ) : (
-    <Navigate to="/unauthorized" replace />
+    
+        <Navigate to="/dashboard" replace /> 
+      
   );
 };
 

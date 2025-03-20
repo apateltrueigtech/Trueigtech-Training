@@ -16,9 +16,8 @@ import Dashboard from './components/RBAC/Dashboard';
 import AdminDashboard from './components/RBAC/AdminDashboard';
 import { AuthProvider } from './components/RBAC/AuthContext';
 import { lazy } from 'react';
-import count from './components/Redux/Features/Counter/count';
 import Count from './components/Redux/Features/Counter/count';
-
+import Post from './components/Redux/Features/Thunk/post'
 const Login = lazy(()=>wait(1000).then(()=>import('./components/RBAC/Login')))
 const router = createBrowserRouter([
   {
@@ -50,7 +49,8 @@ const router = createBrowserRouter([
         ],
       },
       { path: '/login', element: <Login /> },
-      {path:'/count',element:<Count/>}
+      {path:'/count',element:<Count/>},
+    {path:'/post',element:<Post/>},
     
     ],
   },

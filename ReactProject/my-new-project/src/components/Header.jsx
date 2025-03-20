@@ -22,6 +22,7 @@ const Header = ()=> {
       {/* <li><Link to="GetAPIData?userId=1">View Post for User 1</Link></li>
       <li><Link to="GetAPIData?userId=2">View Post for User 2</Link></li>  */}
       <li><Link to="/Count">Count Using Redux</Link></li>
+      <li><Link to ="/Post">Redux Thunk </Link></li>
 
 </ul>
 <br/>

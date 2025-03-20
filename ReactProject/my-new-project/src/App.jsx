@@ -16,7 +16,8 @@ import Dashboard from './components/RBAC/Dashboard';
 import AdminDashboard from './components/RBAC/AdminDashboard';
 import { AuthProvider } from './components/RBAC/AuthContext';
 import { lazy } from 'react';
-
+import count from './components/Redux/Features/Counter/count';
+import Count from './components/Redux/Features/Counter/count';
 
 const Login = lazy(()=>wait(1000).then(()=>import('./components/RBAC/Login')))
 const router = createBrowserRouter([
@@ -49,10 +50,12 @@ const router = createBrowserRouter([
         ],
       },
       { path: '/login', element: <Login /> },
-     
+      {path:'/count',element:<Count/>}
+    
     ],
   },
 ]);
+
 const wait =(time)=>{
   return new Promise((resolve) => {
     setTimeout(()=>{
@@ -63,6 +66,7 @@ const wait =(time)=>{
 }
 function App() {
   return (
+    
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>

@@ -1,37 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Layout from './components/Layout';
+import Counter from './components/Counter';
+import Lifecycle from './components/Lifecycle';
+import UseEffectAPI from './components/UseEffect/UseEffectAPI';
+import LoggerComponent from './components/UseEffect/LoggerComponent';
+import TimerComponent from './components/UseEffect/TimerComponent';
+import ReactHookForm from './components/ReactHookForm';
+import { GetAPIData } from './components/Loader/GetAPIData';
+import {GetData} from './components/Loader/GetData';
+import ProtectedRoute from './components/RBAC/ProtectedRoute'; 
+import RoleBasedRoute from './components/RBAC/RoleBasedRoute'; 
+import Login from './components/RBAC/Login';
+import Dashboard from './components/RBAC/Dashboard';
+import AdminDashboard from './components/RBAC/AdminDashboard';
+import { AuthProvider } from './components/RBAC/AuthContext';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />, 
+    children: [
+      { path: '/', element: <Counter /> },
+      { path: '/Counter', element: <Counter /> },
+      { path: '/Lifecycle', element: <Lifecycle /> },
+      { path: '/UseEffectAPI', element: <UseEffectAPI />,
+        children: [
+          { path: 'TimerComponent', element: <TimerComponent /> },
+          { path: 'LoggerComponent', element: <LoggerComponent /> },
+        ],
+      },
+      { path: '/ReactHookForm', element: <ReactHookForm /> },
+      { path: '/GetAPIData', element: <GetData />, loader: GetAPIData },
+
+      {
+        element: <ProtectedRoute />,
+        children: [
+          { path: '/dashboard', element: <Dashboard /> },
+        ],
+      },
+      {
+        element: <RoleBasedRoute allowedRoles={['admin']} />,
+        children: [
+          { path: '/admin', element: <AdminDashboard /> },
+        ],
+      },
+      { path: '/login', element: <Login /> },
+     
+    ],
+  },
+]);
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <h1 className="text-yellow-800">Hii</h1>
-      <h2 className='text-blue-700'> Hello</h2>
-    </>
-  )
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+
+     // {/* <Student name="Ram" age={25} isStudent={true}/>
+// //       // <Student name="Shyam" age={22} isStudent={false}/>
+// //       // <Student name="Rahul" age={24} isStudent={true}/>
+// //       // <Student name="Sachin" age={26} isStudent={false}/>
+// //       // <Student name="sandy"/> */}
+  );
 }
 
-export default App
+export default App;

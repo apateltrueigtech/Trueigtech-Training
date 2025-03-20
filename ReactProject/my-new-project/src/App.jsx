@@ -1,7 +1,7 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
-import Counter from './components/Counter';
+ import Counter from './components/Counter';
 import Lifecycle from './components/Lifecycle';
 import UseEffectAPI from './components/UseEffect/UseEffectAPI';
 import LoggerComponent from './components/UseEffect/LoggerComponent';
@@ -11,11 +11,14 @@ import { GetAPIData } from './components/Loader/GetAPIData';
 import {GetData} from './components/Loader/GetData';
 import ProtectedRoute from './components/RBAC/ProtectedRoute'; 
 import RoleBasedRoute from './components/RBAC/RoleBasedRoute'; 
-import Login from './components/RBAC/Login';
+// import Login from './components/RBAC/Login';
 import Dashboard from './components/RBAC/Dashboard';
 import AdminDashboard from './components/RBAC/AdminDashboard';
 import { AuthProvider } from './components/RBAC/AuthContext';
+import { lazy } from 'react';
 
+
+const Login = lazy(()=>wait(1000).then(()=>import('./components/RBAC/Login')))
 const router = createBrowserRouter([
   {
     path: '/',
@@ -50,7 +53,14 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
+const wait =(time)=>{
+  return new Promise((resolve) => {
+    setTimeout(()=>{
+      resolve()
+    },time)
+    
+  })
+}
 function App() {
   return (
     <AuthProvider>

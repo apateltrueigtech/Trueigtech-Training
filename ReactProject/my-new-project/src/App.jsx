@@ -18,6 +18,7 @@ import { AuthProvider } from './components/RBAC/AuthContext';
 import { lazy } from 'react';
 import Count from './components/Redux/Features/Counter/count';
 import Post from './components/Redux/Features/Thunk/post'
+import AlbumList from './components/Redux/Features/Saga/albumList';
 const Login = lazy(()=>wait(1000).then(()=>import('./components/RBAC/Login')))
 const router = createBrowserRouter([
   {
@@ -50,7 +51,8 @@ const router = createBrowserRouter([
       },
       { path: '/login', element: <Login /> },
       {path:'/count',element:<Count/>},
-    {path:'/post',element:<Post/>},
+      {path:'/post',element:<Post/>},
+      {path:'/albumlist', element:<AlbumList/>}
     
     ],
   },

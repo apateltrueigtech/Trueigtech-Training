@@ -11,7 +11,6 @@ import { GetAPIData } from './components/Loader/GetAPIData';
 import {GetData} from './components/Loader/GetData';
 import ProtectedRoute from './components/RBAC/ProtectedRoute'; 
 import RoleBasedRoute from './components/RBAC/RoleBasedRoute'; 
-// import Login from './components/RBAC/Login';
 import Dashboard from './components/RBAC/Dashboard';
 import AdminDashboard from './components/RBAC/AdminDashboard';
 import { AuthProvider } from './components/RBAC/AuthContext';
@@ -19,6 +18,9 @@ import { lazy } from 'react';
 import Count from './components/Redux/Features/Counter/count';
 import Post from './components/Redux/Features/Thunk/post'
 import AlbumList from './components/Redux/Features/Saga/albumList';
+import Photo from './components/Axios/Photo';
+
+
 const Login = lazy(()=>wait(1000).then(()=>import('./components/RBAC/Login')))
 const router = createBrowserRouter([
   {
@@ -52,7 +54,8 @@ const router = createBrowserRouter([
       { path: '/login', element: <Login /> },
       {path:'/count',element:<Count/>},
       {path:'/post',element:<Post/>},
-      {path:'/albumlist', element:<AlbumList/>}
+      {path:'/albumlist', element:<AlbumList/>},
+      {path:'/axios',element:<Photo/>}
     
     ],
   },

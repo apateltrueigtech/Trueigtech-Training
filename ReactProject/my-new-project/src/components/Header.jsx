@@ -19,11 +19,10 @@ const Header = ()=> {
       <li><Link to="/UseEffectAPI">UseEffectAPI</Link></li>
       <li><Link to ="/ReactHookForm">ReactHookForm</Link></li>
       <li><Link to="GetAPIData">Data Fetch Using Loader</Link></li>
-      {/* <li><Link to="GetAPIData?userId=1">View Post for User 1</Link></li>
-      <li><Link to="GetAPIData?userId=2">View Post for User 2</Link></li>  */}
       <li><Link to="/Count">Count Using Redux</Link></li>
       <li><Link to ="/Post">Redux Thunk </Link></li>
       <li><Link to ="/albumlist">Redux Saga</Link></li>
+      <li><Link to ="/axios">Data Fetching Using Axios</Link></li>
 
 </ul>
 <br/>
